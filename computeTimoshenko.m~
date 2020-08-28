@@ -39,14 +39,8 @@ switch loadcase
         Mx(x>xP) = P*xP*(L-x(x>xP));
         
         %Twist angle distribution
-        
-        
         t = P*L^3*b/(6*D)*( (1-b^2)/L -3*x.^2./(L^3) ) + P*b/S;
-        
-        
         t(x>xP) = P*L^3*a/(6*D)*( (a^2-1)/L + 3*(L-x(x>xP)).^2./(L^3)) -P*a/S;
-        
-        %t(x>xP) = P*L^3/(6*D)*((a^2-1)/L+3*(L-x(x>xP)).^2/(L^3))-P*a/S;
         
         %Deflections due to bending
         wb = P*L^3*b/(6*D)*((1-b^2)*(x./L)-(x./L).^3);
@@ -89,6 +83,8 @@ switch loadcase
         
 
     case 'cantilever_ptend'
+        
+        
         
     case 'cantilever_dist'
     otherwise
