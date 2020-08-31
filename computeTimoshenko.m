@@ -19,17 +19,6 @@ switch loadcase
         a = xP;
         b = 1-xP;
         
-%         Q = -P*(L - xP)/L*ones(size(x));
-%         Q(x>xP) = P*xP/L;
-%         M = -(P*x*(L - xP))/L;
-%         M(x>xP) = -(P*xP*(L - x(x>xP)))/L;
-%         t = -(P*(L - xP)*(3*x.^2 + xP^2 - 2*L*xP))/(6*E*I*L);
-%         t(x>xP) = (P*xP*(2*L^2 - 6*L*x(x>xP) + 3*x(x>xP).^2 + xP^2))/(6*E*I*L);
-%         w = -(P*x.*(L - xP).*(x.^2 + xP^2 - 2*L*xP))/(6*E*I*L);
-%         w(x>xP) = -(P*xP*(L - x(x>xP)).*(x(x>xP).^2 - 2*L*x(x>xP) + xP^2))/(6*E*I*L);
-%         beta = (1:5)*pi/L;
-%         f=beta.^2*sqrt(model.E*model.I/(model.rho*model.A))/2/pi;
-        
         %Shear force distribution
         Tx = P*(1-xP)*ones(size(x));
         Tx(x>xP) = -P*xP;
