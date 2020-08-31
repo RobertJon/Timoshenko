@@ -96,6 +96,10 @@ switch loadcase
         %Bending moment distribution
         Mx = -P.*(L-x);
         
+        %Twist angle distribution
+        t = P*L^3/(2*D)*(b^2-(eta-a).^2);
+        t(eta>xP) = P*L^2*b^2/(2*D);
+        
         %Deflections due to bending
         wb = P*L^3/(3*D)*( (eta-a).^3 -3*b^2*(eta-a) +2*b^3);
         wb(x>xP) = P*L^3/(3*D)*(-b^3 + 3*b^2*(1-eta(eta>xP)));
@@ -109,6 +113,10 @@ switch loadcase
         t= ones(size(x));
         
     case 'cantilever_dist'
+        %Force input in Newton. 
+        
+        
+        
     otherwise
         warning('case not defined')
 end
