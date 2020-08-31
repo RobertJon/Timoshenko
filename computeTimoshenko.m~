@@ -98,7 +98,7 @@ switch loadcase
         
         %Deflections due to bending
         wb = P*L^3/(3*D)*( (eta-a).^3 -3*b^2*(eta-a) +2*b^3);
-        wb(x>xP) = P*L^3/(3*D)*(-b^3 + 3*b^2*(1-eta(eta>xP)));
+        wb(x>xP) = P*L^3/(3*D)*(-b^3 + 3*b^2*(1-x(eta>xP)));
         
         %Deflections due to shear (Timoshenko)
         ws = Tx.*x/S;
