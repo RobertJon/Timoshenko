@@ -2,9 +2,6 @@
 
 function beam = computeTimoshenko(model,plotcurves)
 
-if nargin < 2
-    plotcurves = 0;
-end
 
 names = fieldnames(model);
 for i=1:numel(names)
